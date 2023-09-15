@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Styles */
+.app {
+        @apply font-poppins;
+}
+
+body {
+	@apply bg-darkBg text-darkTxt selection:bg-darkSelect;
+}
+
+/* Navbar */
+.navbar {
+        @apply flex justify-between items-center mx-auto mt-3 w-[80%];
+}
+
+.logo-txt {
+        @apply font-black text-4xl tracking-[.08rem];
+}
+
+.tabs-sec {
+        @apply w-[25%] flex justify-around;
+}
+
+.nav-item {
+        @apply border-2 border-darkBg hover:border-darkTxt cursor-pointer border-dashed transition-all duration-150 delay-0 ease-in-out px-4 py-2 rounded-full;
+}
+
+.auth-btn {
+        @apply border-2 border-black hover:border-darkTxt border-dashed cursor-pointer hover:bg-darkBg px-4 py-2 bg-black rounded-full;
+}
+
+/* Generic Component */
+.gen-page {
+        @apply mt-5 w-[80%] flex flex-col justify-between items-center mx-auto;
+}
+
+.gen-page-header {
+        @apply font-bold text-2xl;
+}
+
+.gen-page-child {
+        @apply mt-3 w-[100%];
+}
+
+/* ToDo */
+.todo-div {
+        @apply flex flex-col justify-around items-center mx-auto w-[80vw];
+}
+
+.todo-sec {
+        @apply w-[50%] flex flex-col flex-wrap px-3 py-2 justify-center items-center mx-auto;
+}
+
+.todo-list {
+        @apply mb-3 ml-[30%] mr-auto px-4 flex flex-wrap justify-start items-center w-max cursor-pointer;
+}
+
+.check-icon {
+        @apply mr-3;
+}
+
+.task {
+        @apply border-pink-500;
+}
+
+.task-form {
+        @apply flex justify-around items-center mx-auto w-[25%];
+}
