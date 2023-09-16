@@ -1,5 +1,5 @@
 'use client';
-import React, { SyntheticEvent, useState } from 'react';
+import React, { SyntheticEvent, useEffect, useState } from 'react';
 import AddTaskBtn from '@/components/utilities/AddTaskBtn';
 // import DropDown from '@/components/utilities/DropDown';
 import { ImCheckboxUnchecked, ImCheckboxChecked } from 'react-icons/im';
@@ -9,6 +9,7 @@ import { CiCircleMore } from 'react-icons/ci';
 import { Tasks } from '@/interfaces';
 
 const ToDoSection = () => {
+  // TODO: implement local storage of tasks, later implement it to proper backend!!
   const [tasks, setTasks] = useState<Tasks[]>([]);
 
   const handleNewTask = () => {
@@ -21,9 +22,30 @@ const ToDoSection = () => {
       newTasks[i] = { ...newTasks[i], status: !newTasks[i].status };
       return newTasks;
     });
+
+    const newData = [...tasks];
+    newData[i] = { ...newData[i], status: !newData[i].status }
+    localStorage.setItem('vortex-todo', JSON.stringify(newData));
   };
 
-  console.log(tasks);
+  // NOTE: Fetching data
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await localStorage.getItem('vortex-todo');
+      if (data) {
+        const item = await JSON.parse(data);
+        await setTasks(item);
+        console.log(item);
+      }
+      else {
+        console.log('No local data found!!')
+      }
+    }
+
+    fetchData();
+
+  }, [])
+  // console.log(tasks);
   return (
     <div className='todo-div'>
       <section className='todo-sec'>

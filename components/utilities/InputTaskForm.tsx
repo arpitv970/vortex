@@ -9,8 +9,11 @@ const InputTaskForm = ({ showForm, setShowForm, tasks, setTasks }: PropsType) =>
   const [inputTask, setInputTask] = useState('');
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const newData = { task: inputTask, status: false };
+    inputTask !== '' && (setTasks((prev) => [...prev, newData]));
 
-    inputTask !== '' && (setTasks((prev) => [...prev, { task: inputTask, status: false }]))
+    const item = JSON.stringify([...tasks, newData]);
+    inputTask !== '' && (localStorage.setItem('vortex-todo', item));
     setShowForm(false);
     console.log('submitted!');
   }
