@@ -30,8 +30,18 @@ body {
         @apply border-2 border-darkBg hover:border-darkTxt cursor-pointer border-dashed transition-all duration-150 delay-0 ease-in-out px-4 py-2 rounded-full;
 }
 
+/* Auth-Section */
+
+.auth-sec {
+        @apply border-2 w-[25%] flex justify-between items-center ml-auto;
+}
+
 .auth-btn {
         @apply border-2 border-black hover:border-darkTxt border-dashed cursor-pointer hover:bg-darkBg px-4 py-2 bg-black rounded-full;
+}
+
+.auth-user {
+        @apply border-2 border-black cursor-pointer rounded-full;
 }
 
 /* Generic Component */

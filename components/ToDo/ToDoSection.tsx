@@ -51,7 +51,7 @@ const ToDoSection = () => {
       <section className='todo-sec'>
         {/* check if tasks is empty prompt add new task button, else show add new prompt below previous task */}
         {
-          tasks && tasks.map((task, i) => (
+          tasks.length !== 0 ? (tasks.map((task, i) => (
             <p key={i} className='todo-list'>
               {/* <DropDown icon={CiCircleMore} list={menuList}  /> */}
               {
@@ -67,7 +67,10 @@ const ToDoSection = () => {
                 {task.task}
               </span>
             </p>
-          ))
+          )))
+            : (
+              <p>No pending tasks...</p>
+            )
         }
       </section>
       <AddTaskBtn tasks={tasks} setTasks={setTasks} handleNewTask={handleNewTask} />
