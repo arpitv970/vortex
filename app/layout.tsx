@@ -1,7 +1,6 @@
 import '@/styles/global.css'
 import Navbar from '@/components/Navbar'
-
-import type { Metadata } from 'next'
+import Providers from '@/components/Providers';
 
 export const metadata = {
   title: 'Vortex',
@@ -19,10 +18,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <main className='app'>
-          <Navbar />
-          {children}
-        </main>
+        <Providers>
+          <main className='app'>
+            <Navbar />
+            {children}
+          </main>
+        </Providers>
       </body>
     </html>
   )

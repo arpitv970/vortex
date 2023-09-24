@@ -33,15 +33,15 @@ body {
 /* Auth-Section */
 
 .auth-sec {
-        @apply border-2 w-[25%] flex justify-between items-center ml-auto;
+        @apply w-[15%] flex justify-between items-center;
 }
 
 .auth-btn {
-        @apply border-2 border-black hover:border-darkTxt border-dashed cursor-pointer hover:bg-darkBg px-4 py-2 bg-black rounded-full;
+        @apply border-2 border-black hover:border-darkTxt border-dashed cursor-pointer hover:bg-darkBg px-4 py-2 bg-black rounded-full transition-all duration-150 ease-in-out;
 }
 
 .auth-user {
-        @apply border-2 border-black cursor-pointer rounded-full;
+        @apply border-2 border-[#0000] hover:border-darkTxt border-solid hover:border-dashed ml-auto cursor-pointer rounded-full transition-all duration-300 ease-in-out;
 }
 
 /* Generic Component */
